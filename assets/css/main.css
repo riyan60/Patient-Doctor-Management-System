@@ -1,0 +1,452 @@
+/* =============================
+   Root Variables
+============================= */
+:root {
+  --bs-bg: #e3f3f6;
+  --bs-black: #000 !important;
+  --bs-white: #fff !important;
+  --bs-teal: #00796b;
+  --bs-lteal: #72c5bb;
+  --bs-br: 0.3em !important;
+  --bs-font: 'Roboto', sans-serif !important;
+  --bs-hfont: "Montserrat", sans-serif;
+  --bs-gradient: linear-gradient(to right, red, blue) !important;
+}
+
+/* =============================
+   General Reset + Body
+============================= */
+body {
+  font-family: var(--bs-font);
+  background-color: var(--bs-bg);
+  color: var(--bs-black);
+}
+
+section,
+footer {
+  padding: 60px 0;
+  scroll-margin-top: 120px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--bs-teal) !important;
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--bs-teal) !important;
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--bs-hfont);
+  font-weight: 700;
+  color: #000 !important;
+}
+
+p {
+  font-family: var(--bs-font);
+  font-weight: 400;
+  color: var(--bs-black);
+}
+
+.br {
+  border-radius: 0.3em !important;
+}
+
+.cart-img img {
+  margin-left: 10px;
+  margin-top: 2px;
+  height: 35px;
+  border-radius: 20%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* =============================
+   Navbar
+============================= */
+.city-sel,
+.form-select,
+.city-select option {
+  background-color: var(--bs-teal);
+  color: white;
+}
+
+.city-select {
+  -webkit-appearance: none;
+  /* Remove default arrow (Chrome, Safari) */
+  -moz-appearance: none;
+  /* Remove default arrow (Firefox) */
+  appearance: none;
+  /* Remove default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 20,0 10,10"/></svg>');
+  /* Custom white arrow */
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.65em auto;
+  padding-right: 2rem;
+  /* Space for the arrow */
+}
+
+.navbar {
+  height: 100px;
+  border-bottom: #00796b;
+}
+
+#mainNav {
+  background-color: #f9fafc !important;
+}
+
+.nav-link {
+  color: var(--bs-black);
+  margin-left: 5%;
+}
+
+.nav-link.dropdown-toggle::after {
+  display: none !important;
+}
+
+.log-btn:hover{
+  color: white !important;
+}
+
+.logo_custom {
+  width: 100%;
+  height: 60px;
+  object-fit: contain;
+}
+
+.menu-icon {
+  width: 100%;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Mega Menu Custom */
+.dropdown-menu {
+  border: none;
+  border-radius: var(--bs-br);
+  background-color: var(--bs-white);
+  color: var(--bs-black);
+}
+
+.dropdown-menu a {
+  color: var(--bs-black);
+}
+
+.dropdown-menu a:hover {
+  background-color: transparent;
+}
+
+.dropdown-menu h6 {
+  color: var(--bs-teal);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1100px) {
+  .dropdown-menu .dropdown-item {
+    font-size: 16px;
+    /* smaller font size */
+    padding: 4px 8px;
+    /* reduce padding for compact look */
+  }
+
+  .dropdown-menu h6 {
+    font-size: 14px;
+    /* make section headings smaller */
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .scrollable {
+    max-height: 300px;
+    /* Set a fixed height */
+    overflow-y: auto;
+    /* Enable vertical scroll */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+  }
+}
+
+
+/* =============================
+   Hero / Slider
+============================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  height: 40%;
+  max-width: 500px;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  border-radius: .3em;
+}
+
+.hero-content h1 {
+  color: #fff !important;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+  color: #f1f1f1;
+}
+
+@media (max-width: 500px) {
+  .hero-content {
+    height: 40%;
+    max-width: 300px;
+  }
+}
+
+/* Search Form */
+.search-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+  /* Allows wrapping on small screens */
+}
+
+#heroSearchInput {
+  flex: 1 1 auto;
+  /* Take available space */
+  min-width: 0;
+  /* Prevent overflow in flex container */
+  padding: 0.5rem;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: var(--bs-br);
+  border: none;
+}
+
+#heroSearchForm button {
+  flex-shrink: 0;
+  /* Keep button size */
+  padding: 0.5rem 1rem;
+}
+
+.search-form button {
+  padding: 12px 25px;
+  border: none;
+  background: var(--bs-teal);
+  color: white;
+  font-size: 1rem;
+  border-radius: var(--bs-br);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-form button:hover {
+  background: var(--bs-lteal);
+}
+
+/* Custom Buttons */
+.custom-btn,
+.slide-btn {
+  background: transparent;
+  color: var(--bs-teal);
+  font-family: var(--bs-font);
+  border: 2px solid var(--bs-teal);
+  border-radius: var(--bs-br);
+  font-weight: 600;
+  transition: 0.3s;
+  text-decoration: none !important;
+}
+
+.custom-btn:hover {
+  background: var(--bs-teal);
+  color: var(--bs-white) !important;
+}
+
+.slide-btn {
+  background: transparent;
+  color: var(--bs-white);
+  border-color: #fff;
+}
+
+.slide-btn:hover {
+  background: var(--bs-teal);
+  color: var(--bs-white) !important;
+}
+
+
+/* =============================
+   Specialty Cards
+============================= */
+.categories .card {
+  border-radius: var(--bs-br);
+  transition: all 0.3s ease;
+}
+
+.categories .card:hover {
+  border: 1px solid var(--bs-teal);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 12px var(--bs-black);
+}
+
+.categories img {
+  height: 120px;
+  object-fit: contain;
+  padding: 15px;
+}
+
+.categories .card-text {
+  font-weight: bold;
+}
+
+.categories .card-text:hover {
+  text-decoration: underline;
+}
+
+/* =============================
+   Packages
+============================= */
+.card-header {
+  background-color: var(--bs-teal);
+}
+
+.badge {
+  font-size: 1.5rem;
+  background: transparent;
+  color: #000;
+}
+
+.package-card {
+  transition: transform .25s, box-shadow .25s;
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.filter-bar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-img-top {
+  object-fit: contain;
+}
+
+.package-card h5 {
+  font-family: var(--bs-hfont);
+}
+
+
+/* =============================
+   Blog Section
+============================= */
+.blog .card {
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.blog .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+.blog img {
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+/* =============================
+   FAQ Section
+============================= */
+.faq .accordion-button {
+  font-weight: 600;
+}
+
+.faq .accordion-button:not(.collapsed) {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+/* =============================
+   About Section
+============================= */
+.about-img {
+  width: 100%;
+  height: 100%;
+  /* take full column height */
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ensures image covers full div */
+  border-radius: var(--bs-br);
+  display: block;
+  object-position: left;
+}
+
+
+.about ul li {
+  font-size: 16px;
+  color: #444;
+}
+
+.about ul i {
+  color: var(--bs-teal);
+}
